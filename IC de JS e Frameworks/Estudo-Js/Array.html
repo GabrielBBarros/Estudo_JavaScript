@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ArrayNumeros = [1,3,5,7,9];
+        
+        //Função para adicionar no início
+        ArrayNumeros.unshift(0);
+
+        //Função para adicionar no fim
+        ArrayNumeros.push(10);
+
+        //Index é a posição onde o número vai ser inserido
+        let index = 4
+
+        //Elemento a ser adicionado
+        let elem = 6
+
+        //Função para adicionar no meio
+        let ArrayNumeros2 = [...ArrayNumeros.slice(0, index), elem, ...ArrayNumeros.slice(index)];
+        
+        document.write(ArrayNumeros2+"<br>");
+
+        
+
+        //Remoção 
+        let AcharPosicao = ArrayNumeros2.indexOf(5); 
+            if (AcharPosicao !== -1) {
+                ArrayNumeros2.splice(AcharPosicao, 1); 
+            }
+            else{
+                window.alert("Número inexistente no array");
+            }
+         document.write(ArrayNumeros2+"<br>");
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formato de data</title>
+</head>
+<body>
+    <script>
+
+         /*   
+        //Data e hora atual da sua região
+         const data = new Date();
+         window.alert(data);
+         */
+
+         /*
+         //Data escrevendo o mês por extenso, segido pelo dia, ano e horário pontual
+         const data2 = new Date("November 20, 2018 12:12:00");
+         window.alert(data2);
+         */
+         
+         /*
+        //Data usando ano, mês, dia, hora, minuto, segundo
+         const data3 = new Date(2018, 10, 20, 12, 12 , 0);
+         window.alert(data3)
+        */
+        
+        /*
+        //Fomrato ano,mes, dia com barramento entre eles
+        const data4 = new Date("2018-11-20");
+        window.alert(data4);
+        */
+
+        /*
+        //Abreviado
+        const data5 = new Date("24 Mar 2018");
+        window.alert(data5);
+        */
+
+        /*
+        //Pegar a o dia da data
+        const data6 = new Date("2018/11/20");
+        document.write(data6.getDate());
+        */
+
+        //Data formatada
+        const data7 = new Date("2018-11-20");
+        const data_brasil = data7.toLocaleDateString('pt-BR');
+        window.alert(data_brasil);
+        
+
+    </script>
+   
+
+    
+</body>
+</html>

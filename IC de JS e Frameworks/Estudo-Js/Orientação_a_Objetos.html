@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+         class Veiculo {
+
+        constructor(tipo, marca, modelo, ano, preco, completo) {
+          
+            this.tipo = tipo;
+            this.marca = marca;
+            this.modelo = modelo;
+            this.ano = ano;
+            this.preco = preco;
+            this.completo = completo;
+        }
+            desconto() {
+                throw new Error("Método desconto não implementado.");
+            }
+        }
+
+        class Carro extends Veiculo{
+            constructor(tipo, marca, modelo, ano, preco, completo) {
+            super(tipo, marca, modelo, ano, preco, completo);
+        }
+        desconto() {
+                this.preco = this.preco - (this.preco * 0.1);
+                document.write("Preço: R$" + this.preco + "<br>");
+            }
+        }
+
+        class Moto extends Veiculo{
+            constructor(tipo, marca, modelo, ano, preco, completo) {
+                super(tipo, marca, modelo, ano, preco, completo);
+        }
+        desconto() {
+                this.preco = this.preco - (this.preco * 0.15);
+                document.write("Preço: R$" + this.preco + "<br>");
+            }
+        }
+
+        const Carro1 = new Carro('Carro','Fiat', 'Argo', '2020', 89000, true);
+        const Moto1 = new Moto('Moto','Vespa', 'Primavera', '2020', 25000, true);
+
+        Carro1.desconto();
+        Moto1.desconto();
+
+
+
+
+
+
+       /* let Moeda = {
+            valor : null,
+            origem: null,
+            abrangencia: null,
+
+            iof: function(){
+                return this.valor + (this.valor*0.1);
+            }
+
+        };
+
+        let euro = Object.create(Moeda);
+        euro.valor = 5.4;
+        euro.origem = "Europa";
+        euro.abrangencia = "Membros da União Europeia"
+        window.alert(euro.iof());
+        
+        */
+
+    </script>
+        
+</body>
+</html>
