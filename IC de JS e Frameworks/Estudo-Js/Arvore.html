@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    class No {
+  constructor(elemento, esquerda = null, direita = null) {
+    this.elemento = elemento;
+    this.esquerda = esquerda;
+    this.direita = direita;
+  }
+}
+
+class ArvoreBinaria {
+  constructor() {
+    this.raiz = null;
+  }
+
+  insercao(elemento) {
+    let novo_no = new No(elemento);
+    if (!this.raiz) {
+      this.raiz = novo_no;
+    } else {
+      this.insercao_nao_raiz(this.raiz, novo_no);
+    }
+  }
+
+  insercao_nao_raiz(no, novo_no) {
+    if (novo_no.elemento < no.elemento) {
+      if (!no.esquerda) {
+        no.esquerda = novo_no;
+      } else {
+        this.insercao_nao_raiz(no.esquerda, novo_no);
+      }
+    } else {
+      if (!no.direita) {
+        no.direita = novo_no;
+      } else {
+        this.insercao_nao_raiz(no.direita, novo_no);
+      }
+    }
+  }
+}
+
+let nova_arvore = new ArvoreBinaria();
+nova_arvore.insercao(4);
+nova_arvore.insercao(3);
+nova_arvore.insercao(1);
+nova_arvore.insercao(2);
+console.log(nova_arvore);
+
+    </script>
+    
+</body>
+</html>
